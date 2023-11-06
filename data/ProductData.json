@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Cristaline",
+        "price": 2,
+        "poid": 5,
+        "cal": 200
+    },
+    {
+        "name": "Emmental",
+        "price": 2,
+        "poid": 5,
+        "cal": 200
+    },
+    {
+        "name": "Tomate",
+        "price": 2,
+        "poid": 5,
+        "cal": 200
+    },
+    {
+        "name": "Mozarella",
+        "price": 2,
+        "poid": 5,
+        "cal": 200
+    },
+    {
+        "name": "YumYum",
+        "price": 2,
+        "poid": 5,
+        "cal": 200
+    }
+]

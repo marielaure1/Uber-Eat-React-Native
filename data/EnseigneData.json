@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Carrefour",
+        "note": 4.5,
+        "frais": 0,
+        "temps": 20,
+        "img": "carrefour.webp",
+        "promo": "1 acheté (s), 1 offert (s)"
+    },
+    {
+        "name": "Round",
+        "note": 4,
+        "frais": 5,
+        "temps": 40,
+        "img": "round.webp"
+    },
+    {
+        "name": "Carrefour",
+        "note": 4.5,
+        "frais": 0,
+        "temps": 20,
+        "img": "carrefour.webp"
+    },
+    {
+        "name": "Round",
+        "note": 4,
+        "frais": 5,
+        "temps": 40,
+        "img": "round.webp",
+        "promo": "1 acheté (s), 1 offert (s)"
+    },
+    {
+        "name": "Carrefour",
+        "note": 4.5,
+        "frais": 0,
+        "temps": 20,
+        "img": "carrefour.webp"
+    },
+    {
+        "name": "Round",
+        "note": 4,
+        "frais": 5,
+        "temps": 40,
+        "img": "round.webp"
+    },
+    {
+        "name": "Carrefour",
+        "note": 4.5,
+        "frais": 0,
+        "temps": 20,
+        "img": "carrefour.webp",
+        "promo": "1 acheté (s), 1 offert (s)"
+    },
+    {
+        "name": "Round",
+        "note": 4,
+        "frais": 5,
+        "temps": 40,
+        "img": "round.webp"
+    },
+    {
+        "name": "Carrefour",
+        "note": 4.5,
+        "frais": 0,
+        "temps": 20,
+        "img": "carrefour.webp"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Americain",
+        "img": "./src/assets/img/american.png"
+    },
+    {
+        "name": "Burger",
+        "img": "./src/assets/img/burger.png"
+    },
+    {
+        "name": "Glace",
+        "img": "../src/assets/img/icecreamandyogurt.png"
+    },
+    {
+        "name": "Sushi",
+        "img": "../src/assets/img/sushi.png"
+    },
+    {
+        "name": "Italian",
+        "img": "../src/assets/img/italian.png"
+    }
+]
