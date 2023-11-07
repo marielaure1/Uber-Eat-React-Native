@@ -2,11 +2,20 @@
 // import navStyles from './src/assets/styles/components/layout/nav-styles.tsx';
 // import homeStyles from './src/assets/styles/pages/home-styles.tsx';
 // import cardsStyles from './src/assets/styles/components/cards/cards-styles.tsx';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-   home:{
-    backgroundColor: 'white'
+  home:{
+    backgroundColor: 'white',
+    padding: 0
+  },
+  scrollView: {
+    height: windowHeight - 143
+  },
+  list:{
+    paddingRight: 20
   },
   sectionContainer: {
     marginTop: 32,
@@ -26,10 +35,13 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  // Card
   card: {
     width: 300,
+    paddingRight: 20,
   },
   imgContainer: {
+    width: '100%',
     aspectRatio: 2,
     borderRadius: 10,
     marginBottom: 10,
@@ -41,28 +53,33 @@ const styles = StyleSheet.create({
     top: 10,
     backgroundColor: 'rgb(14, 131, 69)',
     padding: 4,
-    borderRadius: 0, 
-    zIndex: 20
+    borderBottomRightRadius: 20,
+    borderTopRightRadius: 20,
+    zIndex: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5
   },
   promoTextContent: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#FFF'
   },
   star: {
     position: 'absolute',
     right: 10,
     top: 10,
+    zIndex: 10
   },
   iconStar: {
     color: '#FFF',
     fontSize: 20,
   },
   img: {
-    flex: 1,
-    aspectRatio: 2,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
   },
   name: {
-    fontSize: 20,
+    fontSize: 16,
     lineHeight: 24,
     padding: 2,
     fontWeight: '500',
@@ -70,16 +87,21 @@ const styles = StyleSheet.create({
   },
   promoText: {
     color: 'rgb(14, 131, 69)',
-    fontSize: 20,
+    fontSize: 16,
+    fontWeight: '500'
   },
-  note: {
-    fontSize: 12,
+  noteContainer : {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 14,
     height: 28,
     width: 28,
     backgroundColor: '#EEEEEE',
+  },
+  note: {
+    fontSize: 12,
     fontWeight: '500',
-    padding: 4
   },
   deliveryInfo: {
     flexDirection: 'row',
@@ -90,109 +112,124 @@ const styles = StyleSheet.create({
     width: 14,
     height: 14,
     marginRight: 6,
-    
   },
   section: {
-    padding: 20
+    paddingBottom: 30
   },
-    enseignesInfo:{
-        flexDirection: 'row'
-    },
-    cardImage:{
-        width: 100
-    },
-    imgContainerCategory:{
-        width: "100%",
-        flexDirection: 'row',
-        justifyContent: 'center',
-        aspectRatio: 1/1,
-    },
-    imgCategory:{
-        height: '100%',
-        width: '100%',
-        objectFit: 'cover',
-        objectPosition: 'center'
-    },
-    nameCategory:{
-        fontSize: 16,
-        padding: 2,
-        fontWeight: '500',
-        color: '#000',
-        textAlign: 'center'
-    },
-    categoryInfo: {
-        width: '100%'
-    },
-    cardProduct: {
-        width: 150
-    },
-    imgContainerProduct:{
-        width: "100%",
-        flexDirection: 'row',
-        justifyContent: 'center',
-        aspectRatio: 1/1,
-    },
-    imgProduct: {
-        height: '100%',
-        width: '100%',
-        objectFit: 'cover',
-        objectPosition: 'center'
-    },
-    productInfo: {
-        width: '100%',
-    },
-    productInfoRow: {
-        width: '100%',
-        flexDirection: 'row'
-    },
-    nameProduct: {
-        fontSize: 16,
-        padding: 2,
-        fontWeight: '500',
-        color: '#000',
-    },
-    priceProduct: {
-        fontSize: 12,
-        fontWeight: '500',
-        color: '#000',
-        paddingRight: 10
-    },
-    poidProduct: {
-        fontSize: 12,
-        color: '#000',
-        paddingRight: 10
-    },
-    calProduct: {
-        fontSize: 12,
-        color: '#000'
-    },
-    buttonsQuantity:{
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        flexDirection: 'row',
-        gap: 10,
-        elevation: 3,
-        borderRadius: 20,
-        shadowColor: 'black', // Pour iOS
-        shadowOffset: { width: 1, height: 1 }, // Pour iOS
-        shadowOpacity: 0.2, // Pour iOS
-        shadowRadius: 1, // Pour iOS
-        borderColor: "black",
-        backgroundColor: 'white',
-    },
-    buttonQuantity: {
-        height: 40,
-        width: 30,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    buttonQuantityText:{
-        fontSize: 18,
-        fontWeight: '500',
-        color: 'black',
-    }
+  list: {
+    paddingLeft: 20
+  },
+  enseignesInfo:{
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  // StyleCategory
+  cardCategory:{
+    width: 70
+  },
+  imgContainerCategory:{
+    width: "100%",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    aspectRatio: 1/1,
+  },
+  imgCategory:{
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover'
+  },
+  nameCategory:{
+    fontSize: 12,
+    padding: 2,
+    fontWeight: '500',
+    color: '#000',
+    textAlign: 'center'
+  },
+  categoryInfo: {
+    width: '100%'
+  },
+  // StyleProduct
+  cardProduct: {
+    width: 150
+  },
+  imgContainerProduct:{
+    width: "100%",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    aspectRatio: 1/1,
+  },
+  imgProduct: {
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover'
+  },
+  productInfo: {
+    width: '100%',
+  },
+  productInfoRow: {
+    width: '100%',
+    flexDirection: 'row'
+  },
+  nameProduct: {
+    fontSize: 16,
+    padding: 2,
+    fontWeight: '500',
+    color: '#000',
+  },
+  priceProduct: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#000',
+    paddingRight: 10
+  },
+  poidProduct: {
+    fontSize: 12,
+    color: '#000',
+    paddingRight: 10
+  },
+  calProduct: {
+    fontSize: 12,
+    color: '#000'
+  },
+  // StyleQuantity
+  buttonsQuantity:{
+    position: 'absolute',
+    bottom: 5,
+    right: 5,
+    flexDirection: 'row',
+    gap: 10,
+    elevation: 3,
+    borderRadius: 20,
+    shadowColor: 'black',
+    shadowOffset: { width: 1, height: 1 }, 
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
+    borderColor: "black",
+    backgroundColor: 'white',
+    minWidth: 40,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonQuantity: {
+    height: 40,
+    width: 30,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonQuantityText:{
+    fontSize: 18,
+    fontWeight: '500',
+    color: 'black',
+  },
+  // Style Enseigne
+  cardEnseigne: {
+    width: '100%',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 40
+  },
 });
 
 export default styles;

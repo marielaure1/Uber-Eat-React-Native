@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   row: {
     flexDirection: 'row',
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     height: 40,
-    border: 'none',
     borderRadius: 20,
     paddingLeft: 10,
     backgroundColor: "#EEEEEE"

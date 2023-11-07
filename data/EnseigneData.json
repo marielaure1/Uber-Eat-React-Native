@@ -4,7 +4,7 @@
         "note": 4.5,
         "frais": 0,
         "temps": 20,
-        "img": "carrefour.webp",
+        "img_id": 1,
         "promo": "1 acheté (s), 1 offert (s)"
     },
     {
@@ -12,57 +12,57 @@
         "note": 4,
         "frais": 5,
         "temps": 40,
-        "img": "round.webp"
+        "img_id": 2
     },
     {
-        "name": "Carrefour",
+        "name": "Allo Pizza",
         "note": 4.5,
         "frais": 0,
         "temps": 20,
-        "img": "carrefour.webp"
+        "img_id": 3
     },
     {
-        "name": "Round",
+        "name": "Spice Chicken",
         "note": 4,
         "frais": 5,
         "temps": 40,
-        "img": "round.webp",
-        "promo": "1 acheté (s), 1 offert (s)"
+        "img_id": 4,
+        "promo": "Des articles en promotions"
     },
     {
-        "name": "Carrefour",
+        "name": "Washoku",
         "note": 4.5,
         "frais": 0,
         "temps": 20,
-        "img": "carrefour.webp"
+        "img_id": 5
     },
     {
-        "name": "Round",
+        "name": "786 - Burger & Brasserie 🍔",
         "note": 4,
         "frais": 5,
         "temps": 40,
-        "img": "round.webp"
+        "img_id": 6
     },
     {
-        "name": "Carrefour",
+        "name": "Nouilles Ceintures 西安吃面公司",
         "note": 4.5,
         "frais": 0,
         "temps": 20,
-        "img": "carrefour.webp",
-        "promo": "1 acheté (s), 1 offert (s)"
+        "img_id": 7,
+        "promo": "20 % d’économies (dépensez 20 €)"
     },
     {
-        "name": "Round",
+        "name": "Street Bangkok - Poissonnière",
         "note": 4,
         "frais": 5,
         "temps": 40,
-        "img": "round.webp"
+        "img_id": 8
     },
     {
-        "name": "Carrefour",
+        "name": "YiFang Fruit Tea - Richelieu",
         "note": 4.5,
         "frais": 0,
         "temps": 20,
-        "img": "carrefour.webp"
+        "img_id": 9
     }
 ]

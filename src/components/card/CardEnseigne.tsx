@@ -16,7 +16,6 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ data }) => {
   const [activeStar, setActiveStar] = useState(0);
   const [activePromo, setActivePromo] = useState(false);
-
   const [ img, setImg ] = useState({
     1: require('../../assets/img/enseigne/carrefour.webp'),
     2: require('../../assets/img/enseigne/round.webp'),
@@ -40,7 +39,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
   return (
     <TouchableHighlight underlayColor="transparent" onPress={() => {}}>
-      <View style={styles.card}>
+      <View style={styles.cardEnseigne}>
         <View style={styles.imgContainer}>
           {activePromo && (
             <View style={styles.promo}>
@@ -55,10 +54,10 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 <Text style={activePromo ? styles.promoText : styles.name}>{data.name}</Text>
                 <View style={styles.deliveryInfo}>
                     <Image source={require('../../assets/img/uber_one.png')} style={styles.deliveryIcon} />
-                    <Text style={styles.fraisInfo}>Frais de livraison à {data.frais} €</Text>
+                    <Text tyle={styles.fraisInfo}>Frais de livraison à {data.frais} €</Text>
                 </View>
             </View>
-            <View  style={styles.noteContainer}>
+            <View style={styles.noteContainer}>
                 <Text style={styles.note}>{data.note}</Text>
             </View>
         </View>

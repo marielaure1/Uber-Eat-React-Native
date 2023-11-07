@@ -3,30 +3,35 @@
         "name": "Cristaline",
         "price": 2,
         "poid": 5,
-        "cal": 200
+        "cal": 200,
+        "img_id": 1 
     },
     {
         "name": "Emmental",
         "price": 2,
         "poid": 5,
-        "cal": 200
+        "cal": 200,
+        "img_id": 2
     },
     {
         "name": "Tomate",
         "price": 2,
         "poid": 5,
-        "cal": 200
+        "cal": 200,
+        "img_id": 3 
     },
     {
         "name": "Mozarella",
         "price": 2,
         "poid": 5,
-        "cal": 200
+        "cal": 200,
+        "img_id": 4 
     },
     {
         "name": "YumYum",
         "price": 2,
         "poid": 5,
-        "cal": 200
+        "cal": 200,
+        "img_id": 5
     }
 ]

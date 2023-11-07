@@ -1,22 +1,50 @@
 [
     {
         "name": "Americain",
-        "img": "./src/assets/img/american.png"
+        "img_id": 1
     },
     {
         "name": "Burger",
-        "img": "./src/assets/img/burger.png"
+        "img_id": 2
     },
     {
         "name": "Glace",
-        "img": "../src/assets/img/icecreamandyogurt.png"
+        "img_id": 3
     },
     {
         "name": "Sushi",
-        "img": "../src/assets/img/sushi.png"
+        "img_id": 4
     },
     {
-        "name": "Italian",
-        "img": "../src/assets/img/italian.png"
+        "name": "Italien",
+        "img_id": 5
+    },
+    {
+        "name": "Asie",
+        "img_id": 6
+    },
+    {
+        "name": "Fastfood",
+        "img_id": 7
+    },
+    {
+        "name": "Français",
+        "img_id": 8
+    },
+    {
+        "name": "Indien",
+        "img_id": 9
+    },
+    {
+        "name": "Japonais",
+        "img_id": 10
+    },
+    {
+        "name": "Sandwich",
+        "img_id": 11
+    },
+    {
+        "name": "StreetFood",
+        "img_id": 12
     }
 ]
