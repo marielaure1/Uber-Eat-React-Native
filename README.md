@@ -2,7 +2,10 @@
 
 Bienvenue dans mon projet de devoir en React Native ! Dans ce projet, j'ai recréé une page d'accueil de l'application Uber Eats.
 
-<img src="./src/assets/img/appli.jpg" />
+
+<p align="center">
+  <img src="./src/assets/img/appli.jpg" width="300" alt="Image de votre projet">
+</p>
 
 ## Fonctionnalités
 - Affichage de catégories de restaurants
