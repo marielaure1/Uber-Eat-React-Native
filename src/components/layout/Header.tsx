@@ -21,6 +21,7 @@ function Header({count}) {
         <TextInput
           style={styles.searchInput}
           placeholder="Recherche..."
+          placeholderTextColor="#000" 
         />
       </View>
     </View>
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     paddingLeft: 10,
-    backgroundColor: "#EEEEEE"
+    backgroundColor: "#EEEEEE",
+    color: '#000'
   },
   button: {
     backgroundColor: 'black',

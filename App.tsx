@@ -23,15 +23,15 @@ function App(): JSX.Element {
           <SliderCategory />
           <SliderEnseigne title="Commandez à nouveau" reverse/>
 
-         <CardEnseigne data={EnseigneData[7]} />
-          <CardEnseigne data={EnseigneData[3]} />
+         <CardEnseigne type="enseigne" data={EnseigneData[7]} />
+          <CardEnseigne type="enseigne" data={EnseigneData[3]} />
 
            <SliderProduct increment={increment} decrement={decrement}/>
 
           <SliderEnseigne title="Récemment consultés"/>
 
-          <CardEnseigne data={EnseigneData[6]} />
-          <CardEnseigne data={EnseigneData[4]} />
+          <CardEnseigne type="enseigne" data={EnseigneData[6]} />
+          <CardEnseigne type="enseigne" data={EnseigneData[4]} />
 
           <SliderEnseigne title="Swile accepté" reverse/>
         </View>

@@ -13,8 +13,8 @@ interface CardProps {
   };
 }
 
-const Card: React.FC<CardProps> = ({ data }) => {
-  const [activeStar, setActiveStar] = useState(0);
+const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
+  const [activeStar, setActiveStar] = useState(data.star);
   const [activePromo, setActivePromo] = useState(false);
   const [ img, setImg ] = useState({
     1: require('../../assets/img/enseigne/carrefour.webp'),
@@ -34,18 +34,28 @@ const Card: React.FC<CardProps> = ({ data }) => {
   }, []);
 
   const handleStar = () => {
-    setActiveStar(activeStar === 1 ? 0 : 1);
+    setActiveStar(activeStar ? 0 : 1);
   };
 
   return (
-    <TouchableHighlight underlayColor="transparent" onPress={() => {}}>
-      <View style={styles.cardEnseigne}>
+    <View underlayColor="transparent" onPress={() => {}}>
+      <View style={type == "slider" ? styles.card : styles.cardEnseigne}>
         <View style={styles.imgContainer}>
           {activePromo && (
             <View style={styles.promo}>
               <Text  style={styles.promoTextContent}>{data.promo}</Text>
             </View>
           )}
+
+          <TouchableHighlight style={styles.star} onPress={handleStar}>
+            { activeStar ? (
+                <Image source={require('../../assets/img/heart-fill.png')} style={styles.iconStar}/>
+            ) : (
+              <Image source={require('../../assets/img/heart-light.png')} style={styles.iconStar}/>
+            )
+            }
+              
+          </TouchableHighlight>
 
           <Image source={img[data.img_id]} style={styles.img} />
         </View>
@@ -54,7 +64,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 <Text style={activePromo ? styles.promoText : styles.name}>{data.name}</Text>
                 <View style={styles.deliveryInfo}>
                     <Image source={require('../../assets/img/uber_one.png')} style={styles.deliveryIcon} />
-                    <Text tyle={styles.fraisInfo}>Frais de livraison à {data.frais} €</Text>
+                    <Text style={styles.fraisInfo}>Frais de livraison à {data.frais} €</Text>
                 </View>
             </View>
             <View style={styles.noteContainer}>
@@ -62,8 +72,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
             </View>
         </View>
       </View>
-    </TouchableHighlight>
+    </View>
   );
 };
 
-export default Card;
+export default CardEnseigne;

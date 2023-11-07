@@ -67,11 +67,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 10,
     top: 10,
-    zIndex: 10
+    zIndex: 10,
+    width: 24,
+    height: 24
   },
   iconStar: {
-    color: '#FFF',
-    fontSize: 20,
+    width: '100%',
+    height: '100%'
   },
   img: {
     width: '100%',
@@ -102,11 +104,13 @@ const styles = StyleSheet.create({
   note: {
     fontSize: 12,
     fontWeight: '500',
+    color: '#000'
   },
   deliveryInfo: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: 250
+    width: 250,
+    color: '#000'
   },
   deliveryIcon: {
     width: 14,
@@ -210,6 +214,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  fraisInfo: {
+    color: '#000'
   },
   buttonQuantity: {
     height: 40,

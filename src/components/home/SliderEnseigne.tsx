@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import styles from '../../../Styles.tsx';
-import Card from '../card/Card.tsx';
+import CardEnseigne from '../card/CardEnseigne.tsx';
 import EnseigneData from '../../../data/EnseigneData.json';
 import { useState, useEffect } from "react";
 
@@ -30,7 +30,7 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
           {reverse && 
             listEnseigne.slice(0).reverse().map((item, index) => {
               return (
-                <Card key={index} data={item} />
+                <CardEnseigne type="slider" key={index} data={item} />
               )
             })
           }
@@ -38,7 +38,7 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
           {!reverse && 
             listEnseigne.map((item, index) => {
               return (
-                <Card key={index} data={item} />
+                <CardEnseigne type="slider" key={index} data={item} />
               )
             })
           }
