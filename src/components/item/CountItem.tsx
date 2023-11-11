@@ -19,17 +19,13 @@ const CountItem: React.FC = ({ data, increment, decrement }) => {
     }
 
     const handleStatut = () => {
-        if(statut){
-            setStatut(false)
-        } else {
-            setStatut(true);
-            setTimeout(() => {
-                setStatut(false)
-            }, 5000);
+        setStatut(true);
 
-            
-        }
-        
+        const timeout= setTimeout(() => {
+        setStatut(false);
+        }, 5000);
+
+        return () => clearTimeout(timeout);
     }
     
   return (
@@ -45,7 +41,7 @@ const CountItem: React.FC = ({ data, increment, decrement }) => {
 
         {!statut && count > 0 && 
             <>
-                <TouchableHighlight style={styles.buttonQuantity} onPress={() => handleStatut()}>
+                <TouchableHighlight style={styles.buttonQuantity} onPress={handleStatut}>
                     <Text style={styles.buttonQuantityText}> {count} </Text>
                 </TouchableHighlight>
             </>

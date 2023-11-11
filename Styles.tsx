@@ -237,6 +237,113 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 40
   },
+  containerFooter:{
+    position: 'absolute',
+    bottom: 0,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    width: '100%'
+  },
+  button: {
+    backgroundColor: 'black',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    borderRadius: 8,
+    width: '100%'
+  },
+  text: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: 5,
+  },
+  imgCart:{
+    width: 15,
+    height: 15
+  },
+  buttonIcon: {
+    width: 30,
+    height: 30
+  },
+  buttonToggleMode: {
+    flexDirection: "row",
+    backgroundColor: '#EEEEEE',
+    borderRadius: 20,
+    gap: 5
+  },
+  toggleMode: {
+    borderRadius: 20,
+    width: 40,
+    height: 35,
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  toggleModeBlack: {
+    backgroundColor: 'black'
+  },
+  toggleModeWhite: {
+    backgroundColor: 'transparent'
+  },
+  toggleModeImg: {
+    width: 18,
+    height: 18
+  },
+  navBar: {
+    flexDirection: 'column',
+    backgroundColor: 'white',
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+  },
+  rowContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  addressText: {
+    fontSize: 16,
+    marginRight: 10,
+    color: 'black',
+    fontWeight: '500'
+  },
+  icon: {
+    width: 20,
+    height: 20,
+  },
+  searchInput: {
+    height: '100%',
+    width: '100%',
+    paddingLeft: 10
+  },
+  searchImg:{
+    width: 20,
+    height: 20
+  },
+  columnContent:{
+    flexDirection: "column"
+  },
+  addressTextLabel: {
+    fontSize: 16,
+    marginRight: 10,
+    color: 'black'
+  },
+  searchContainer: {
+    width: '100%',
+    height: 40,
+    borderRadius: 20,
+    paddingLeft: 10,
+    backgroundColor: "#EEEEEE",
+    color: '#000',
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
 });
 
 export default styles;
