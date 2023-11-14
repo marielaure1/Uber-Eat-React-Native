@@ -11,7 +11,10 @@ function Header({count}) {
       <View style={styles.row}>
         <View style={styles.columnContent}>
           <Text style={styles.addressTextLabel}>Livrer maintenant</Text>
-          <Text style={styles.addressText}>{address}</Text>
+          <View style={styles.rowAddress}>
+            <Text style={styles.addressText}>{address}</Text>
+            <Image source={require('../../assets/icons/arrow-down.png')} style={styles.rowAddressArrow}/>
+          </View>
         </View>
         <ToggleMode  /> 
       </View>

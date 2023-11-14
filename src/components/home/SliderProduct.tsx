@@ -5,14 +5,14 @@ import CardProduct from '../card/CardProduct.tsx';
 import ProductData from '../../../data/ProductData.json';
 import { useState, useEffect } from "react";
 
-export default function SliderProduct({title, increment, decrement}): JSX.Element {
+export default function SliderProduct({title, increment, decrement, enseigne}): JSX.Element {
   const [listProduct, getListProduct] = useState(ProductData);
   
   return (
     <View style={styles.section}>
       <Text style={[styles.sectionTitle, styles.list]}>{title}</Text>
       <ScrollView horizontal={true}  showsHorizontalScrollIndicator={false} style={styles.list}>
-        {ProductData.map((item, index) => (
+        {ProductData.filter((item) => enseigne == item.enseigne ? true : false).map((item, index) => (
           <CardProduct key={index} data={item} increment={increment} decrement={decrement}/>
         ))}
         </ScrollView>

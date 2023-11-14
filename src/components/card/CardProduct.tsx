@@ -18,7 +18,14 @@ const CardProduct: React.FC<CardProps> = ({ data, increment, decrement }) => {
         2: require('../../assets/img/product/emmental.png'),
         3: require('../../assets/img/product/tomate.png'),
         4: require('../../assets/img/product/mozzarella.png'),
-        5: require('../../assets/img/product/yumyum.png')
+        5: require('../../assets/img/product/yumyum.png'),
+        6: require('../../assets/img/product/benenuts-fromage.webp'),
+        7: require('../../assets/img/product/benenuts-nature.webp'),
+        8: require('../../assets/img/product/berlin-monaco.webp'),
+        9: require('../../assets/img/product/lays-ancienne.webp'),
+        10: require('../../assets/img/product/lays-barbecue.webp'),
+        11: require('../../assets/img/product/lays-paysanne.webp'),
+        12: require('../../assets/img/product/lays-vinaigre.webp')
       });
     
   return (

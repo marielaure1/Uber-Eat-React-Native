@@ -32,6 +32,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
   },
+  titleContainerLeft:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  titleLeft:{
+    marginBottom: 0
+  },
+  titleContainerRight:{
+    backgroundColor: "#EEEEEE",
+    borderRadius: 20,
+    padding: 8
+  },
+  titleContainerRightImg: {
+    width: 15,
+    height: 15
+  },
   highlight: {
     fontWeight: '700',
   },
@@ -198,7 +215,7 @@ const styles = StyleSheet.create({
   // StyleQuantity
   buttonsQuantity:{
     position: 'absolute',
-    bottom: 5,
+    top: 5,
     right: 5,
     flexDirection: 'row',
     gap: 10,
@@ -303,6 +320,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
+  titleContainer:{
+    marginBottom: 0
+  },
   rowContent: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -343,6 +363,64 @@ const styles = StyleSheet.create({
     color: '#000',
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  // Filter buttons
+  filterContainer:{
+    flexDirection: "row",
+    gap: 10
+  },
+  filterBtn:{
+    marginRight: 10,
+    backgroundColor: "#EEEEEE",
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 20
+  },
+  filterBtnSelect:{
+    backgroundColor: "#000",
+  },
+  filterBtnText: {
+    color: '#000',
+    fontSize: 12
+  },
+  filterBtnTextSelect:{
+    color: "#FFF",
+  },
+  filterBtnContainer:{
+    flexDirection: "row",
+    alignItems: 'center',
+    gap: 8
+  },
+  filterBtnImg: {
+    width: 16,
+    height: 16
+  },
+  filterBtnImgArrow: {
+    width: 10,
+    height: 10
+  },
+  sectionSm:{
+    paddingBottom: 15
+  },
+  rowAddress : {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  rowAddressArrow:{
+    width: 14,
+    height: 14
+  },
+  cardAnnonce:{
+    width: 360,
+    paddingRight: 20,
+  },
+  imgContainerAnnonce:{
+    width: '100%',
+    aspectRatio: 7/3,
+    borderRadius: 10,
+    marginBottom: 10,
+    overflow: 'hidden',
+    position: 'relative',
   }
 });
 

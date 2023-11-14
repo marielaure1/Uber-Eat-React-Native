@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, Image } from 'react-native';
 import styles from '../../../Styles.tsx';
 import CardEnseigne from '../card/CardEnseigne.tsx';
 import EnseigneData from '../../../data/EnseigneData.json';
@@ -23,8 +23,15 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
 
   return (
       <View style={styles.section}>
-          <Text style={[styles.sectionTitle, styles.list]}>{title}</Text>
-
+          <View style={[styles.row, styles.list, styles.titleContainer]}>
+            <View style={styles.titleContainerLeft}>
+              <Text style={[styles.sectionTitle, styles.titleLeft]}>{title}</Text>
+              <Image source={require('../../assets/icons/info.png')} style={styles.titleContainerLeftImg} />
+            </View>
+            <View style={styles.titleContainerRight}>
+              <Image source={require('../../assets/icons/arrow-right.png')}  style={styles.titleContainerRightImg}/>
+            </View>
+          </View>
           
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.list}>
           {reverse && 

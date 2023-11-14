@@ -5,6 +5,8 @@ import Header from './src/components/layout/Header.tsx';
 import SliderCategory from './src/components/home/SliderCategory.tsx';
 import SliderEnseigne from './src/components/home/SliderEnseigne.tsx';
 import SliderProduct from './src/components/home/SliderProduct.tsx';
+import SliderFilter from './src/components/home/SliderFilter.tsx';
+import SliderAnnonce from './src/components/home/SliderAnnonce.tsx';
 import CardEnseigne from './src/components/card/CardEnseigne.tsx';
 import CartItem from './src/components/item/CartItem.tsx';
 import EnseigneData from './data/EnseigneData.json';
@@ -22,17 +24,22 @@ function App(): JSX.Element {
         <View style={styles.home}>
 
           <SliderCategory />
+
+          <SliderFilter />
           <SliderEnseigne title="Commandez à nouveau" reverse/>
 
          <CardEnseigne type="enseigne" data={EnseigneData[7]} />
           <CardEnseigne type="enseigne" data={EnseigneData[3]} />
 
-           <SliderProduct title="Faites vos courses chez Carrefour" increment={increment} decrement={decrement}/>
+           <SliderProduct title="Faites vos courses chez Carrefour" increment={increment} decrement={decrement} enseigne={1}/>
+           <SliderAnnonce/>
 
           <SliderEnseigne title="Récemment consultés"/>
 
           <CardEnseigne type="enseigne" data={EnseigneData[6]} />
           <CardEnseigne type="enseigne" data={EnseigneData[4]} />
+
+          <SliderProduct title="Snack" increment={increment} decrement={decrement} enseigne={2}/>
 
           <SliderEnseigne title="Swile accepté" reverse/>
         </View>

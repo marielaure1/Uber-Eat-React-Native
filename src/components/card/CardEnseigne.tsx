@@ -49,9 +49,9 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
 
           <TouchableHighlight style={styles.star} onPress={handleStar}>
             { activeStar ? (
-                <Image source={require('../../assets/img/heart-fill.png')} style={styles.iconStar}/>
+                <Image source={require('../../assets/icons/heart-fill.png')} style={styles.iconStar}/>
             ) : (
-              <Image source={require('../../assets/img/heart-light.png')} style={styles.iconStar}/>
+              <Image source={require('../../assets/icons/heart-light.png')} style={styles.iconStar}/>
             )
             }
               
@@ -63,7 +63,7 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
             <View>
                 <Text style={activePromo ? styles.promoText : styles.name}>{data.name}</Text>
                 <View style={styles.deliveryInfo}>
-                    <Image source={require('../../assets/img/uber_one.png')} style={styles.deliveryIcon} />
+                    <Image source={require('../../assets/icons/uber_one.png')} style={styles.deliveryIcon} />
                     <Text style={styles.fraisInfo}>Frais de livraison à {data.frais} €</Text>
                 </View>
             </View>

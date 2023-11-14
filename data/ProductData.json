@@ -4,34 +4,95 @@
         "price": 2,
         "poid": 5,
         "cal": 200,
-        "img_id": 1 
+        "img_id": 1,
+        "enseigne": 1
     },
     {
         "name": "Emmental",
         "price": 2,
         "poid": 5,
         "cal": 200,
-        "img_id": 2
+        "img_id": 2,
+        "enseigne": 1
     },
     {
         "name": "Tomate",
         "price": 2,
         "poid": 5,
         "cal": 200,
-        "img_id": 3 
+        "img_id": 3,
+        "enseigne": 1
     },
     {
         "name": "Mozarella",
         "price": 2,
         "poid": 5,
         "cal": 200,
-        "img_id": 4 
+        "img_id": 4,
+        "enseigne": 1 
     },
     {
         "name": "YumYum",
         "price": 2,
         "poid": 5,
         "cal": 200,
-        "img_id": 5
+        "img_id": 5,
+        "enseigne": 1
+    },
+    {
+        "name": "Benenuts - Fromage",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 6,
+        "enseigne": 2
+    },
+    {
+        "name": "Benenuts - Nature",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 7,
+        "enseigne": 2
+    },
+    {
+        "name": "Berlin - Monaco",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 8,
+        "enseigne": 2
+    },
+    {
+        "name": "Lays - Ancienne",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 9,
+        "enseigne": 2
+    },
+    {
+        "name": "Lays - Barcecue",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 10,
+        "enseigne": 2
+    },
+    {
+        "name": "Lays - Paysanne",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 11,
+        "enseigne": 2
+    },
+    {
+        "name": "Lays - Vinaigre",
+        "price": 2,
+        "poid": 5,
+        "cal": 200,
+        "img_id": 12,
+        "enseigne": 2
     }
 ]
