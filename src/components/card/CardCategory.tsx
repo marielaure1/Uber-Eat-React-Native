@@ -12,7 +12,7 @@ interface CardImage {
 
 const CardCategory: React.FC<CardProps> = ({ data }) => {
 
-    const [ img, setImg ] = useState({
+    const img = {
         1: require('../../assets/img/category/american.png'),
         2: require('../../assets/img/category/burger.png'),
         3: require('../../assets/img/category/icecreamandyogort.png'),
@@ -25,7 +25,7 @@ const CardCategory: React.FC<CardProps> = ({ data }) => {
         10: require('../../assets/img/category/japanese.png'),
         11: require('../../assets/img/category/sandwich.png'),
         12: require('../../assets/img/category/streetfood.png'),
-    });
+    };
 
     return (
         <TouchableHighlight underlayColor="transparent" onPress={() => {}}>

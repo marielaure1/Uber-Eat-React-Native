@@ -421,6 +421,28 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     overflow: 'hidden',
     position: 'relative',
+  },
+  fermeture: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    backgroundColor: "#00000080"
+  }, 
+  displayNone: {
+    display: "none"
+  },
+  displayFlex: {
+    display: "flex"
+  },
+  fermetureText: {
+    color: 'white',
+    fontWeight: 600,
+    fontSize: 18
   }
 });
 

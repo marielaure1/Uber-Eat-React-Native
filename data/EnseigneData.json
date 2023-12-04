@@ -6,7 +6,11 @@
         "temps": 20,
         "img_id": 1,
         "promo": "1 acheté (s), 1 offert (s)",
-        "star": true
+        "star": true,
+        "horaires" : {
+            "ouverture": "09:00:00",
+            "fermeture": "15:30:00"
+        }
     },
     {
         "name": "Round",
@@ -14,7 +18,11 @@
         "frais": 5,
         "temps": 40,
         "img_id": 2,
-        "star": false
+        "star": false,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "Allo Pizza",
@@ -22,7 +30,11 @@
         "frais": 0,
         "temps": 20,
         "img_id": 3,
-        "star": false
+        "star": false,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "Spice Chicken",
@@ -31,7 +43,11 @@
         "temps": 40,
         "img_id": 4,
         "promo": "Des articles en promotions",
-        "star": true
+        "star": true,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "Washoku",
@@ -39,7 +55,11 @@
         "frais": 0,
         "temps": 20,
         "img_id": 5,
-        "star": true
+        "star": true,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "786 - Burger & Brasserie 🍔",
@@ -47,7 +67,11 @@
         "frais": 5,
         "temps": 40,
         "img_id": 6,
-        "star": true
+        "star": true,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "Nouilles Ceintures 西安吃面公司",
@@ -56,7 +80,11 @@
         "temps": 20,
         "img_id": 7,
         "promo": "20 % d’économies (dépensez 20 €)",
-        "star": false
+        "star": false,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "Street Bangkok - Poissonnière",
@@ -64,7 +92,11 @@
         "frais": 5,
         "temps": 40,
         "img_id": 8,
-        "star": true
+        "star": true,
+        "horaires" : {
+            "ouverture": "11:00:00",
+            "fermeture": "22:00:00"
+        }
     },
     {
         "name": "YiFang Fruit Tea - Richelieu",
@@ -72,6 +104,10 @@
         "frais": 0,
         "temps": 20,
         "img_id": 9,
-        "star": false
+        "star": false,
+        "horaires" : {
+            "ouverture": "15:46:00",
+            "fermeture": "23:00:00"
+        }
     }
 ]

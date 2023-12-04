@@ -13,7 +13,7 @@ interface CardCategory {
 
 const CardProduct: React.FC<CardProps> = ({ data, increment, decrement }) => {
 
-    const [ img, setImg ] = useState({
+    const img = {
         1: require('../../assets/img/product/cristaline.png'),
         2: require('../../assets/img/product/emmental.png'),
         3: require('../../assets/img/product/tomate.png'),
@@ -26,7 +26,7 @@ const CardProduct: React.FC<CardProps> = ({ data, increment, decrement }) => {
         10: require('../../assets/img/product/lays-barbecue.webp'),
         11: require('../../assets/img/product/lays-paysanne.webp'),
         12: require('../../assets/img/product/lays-vinaigre.webp')
-      });
+      };
     
   return (
     <TouchableHighlight underlayColor="transparent">
