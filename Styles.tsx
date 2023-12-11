@@ -448,7 +448,8 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   timer:{
-    color: "black"
+    color: "rgb(14, 131, 69)", 
+    fontWeight: 600
   },
   formHeader: {
     backgroundColor: "black",

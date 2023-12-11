@@ -7,11 +7,11 @@
         "img_id": 1,
         "promo": {
             "title": "1 acheté (s), 1 offert (s)",
-            "endDate": "2023-12-12T19:00:00"
+            "endDate": "2023-12-15T19:00:00"
         },
         "star": true,
         "horaires" : {
-            "ouverture": "23:00:00",
+            "ouverture": "21:00:00",
             "fermeture": "06:59:59"
         }
     },
@@ -74,6 +74,10 @@
         "horaires" : {
             "ouverture": "11:00:00",
             "fermeture": "22:00:00"
+        },
+        "promo": {
+            "title": "- 30% sur tout le menu",
+            "endDate": "2023-12-12T14:00:00"
         }
     },
     {
@@ -111,6 +115,10 @@
         "horaires" : {
             "ouverture": "15:56:00",
             "fermeture": "23:00:00"
+        },
+        "promo": {
+            "title": "1 acheté (s), 1 offert (s)",
+            "endDate": "2023-12-24T19:00:00"
         }
     }
 ]

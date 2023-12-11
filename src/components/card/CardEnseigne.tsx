@@ -40,12 +40,18 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
     let now = new Date();
     let nowDateTime = now.toISOString();
     let nowDate = nowDateTime.split('T')[0];
-    let tomorrow = new Date(now);
-    tomorrow.setDate(now.getDate() + 1);
-    let tomorrowDate = tomorrow.toISOString().split('T')[0];
+
+    let a = new Date(nowDate + 'T23:59:59.999Z');
+    let tomorrow = new Date(a.getTime() + 1);
+    let tomorrowDateTime = tomorrow.toISOString();
+    let tomorrowDate = tomorrowDateTime.split('T')[0];
 
     let ouverture = new Date(nowDate + 'T' + data.horaires.ouverture);
-    let fermeture = ouverture > fermeture ? new Date(tomorrowDatenew + 'T' + data.horaires.fermeture) : new Date(nowDate + 'T' + data.horaires.fermeture);
+    let fermeture = new Date(nowDate + 'T' + data.horaires.fermeture);
+
+    let date = now >= tomorrow ? nowDate : tomorrowDate;
+
+    fermeture = ouverture > fermeture ? new Date(date + 'T' + data.horaires.fermeture) : fermeture;
 
     if (ouverture <= now && fermeture >= now) {
       statutHoraire.current = true;
@@ -56,7 +62,6 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
     if(statutHoraire.current != reload){
       setReload(statutHoraire.current);
     }
-    
   };
 
   useEffect(() => {
@@ -83,6 +88,12 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
+    if(difference > 0){
+      
+      setActivePromo(true);
+    } else {
+      setActivePromo(false);
+    }
     
     return { days, hours, minutes, seconds };
   }
@@ -104,8 +115,8 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
     <View underlayColor="transparent" onPress={() => {}}>
       <View style={type === "slider" ? styles.card : styles.cardEnseigne}>
         <View style={styles.imgContainer}>
-          {activePromo && statutHoraire?.current && (
-            <View style={styles.promo.title}>
+          {data?.promo?.title && activePromo && statutHoraire?.current &&(
+            <View style={styles.promo}>
               <Text style={styles.promoTextContent}>{data.promo.title}</Text>
             </View>
           )}
@@ -123,10 +134,8 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
             <Text style={styles.fermetureText}>Fermée</Text>
           </View>
 
-          {/* <View style={[styles.timerContainer, !statutHoraire?.current ? styles.displayNone : styles.displayFlex, timeRemaining != false ? styles.displayFlex : styles.displayNone]}>
-              <Text style={[styles.timer]}>
-                {`${timeRemaining?.days} jour${timeRemaining?.days > 1 ? "s" : ""} ${timeRemaining?.hours} heure${timeRemaining?.hours > 1 ? "s" : ""} ${timeRemaining?.minutes} minute${timeRemaining?.minutes > 1 ? "s" : ""} ${timeRemaining?.seconds} seconde${timeRemaining?.seconds > 1 ? "s" : ""}`}</Text>
-            </View> */}
+         
+          
         </View>
         <View style={styles.enseignesInfo}>
           <View>
@@ -140,6 +149,12 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
             <Text style={styles.note}>{data.note}</Text>
           </View>
         </View>
+        {statutHoraire?.current &&  timeRemaining && (
+            <View style={[styles.timerContainer]}>
+            <Text style={[styles.timer]}>
+              {`${timeRemaining?.days} j ${timeRemaining?.hours} h ${timeRemaining?.minutes} m ${timeRemaining?.seconds} s`}</Text>
+          </View>
+          )}
       </View>
     </View>
   );
