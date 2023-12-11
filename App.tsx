@@ -16,7 +16,7 @@ export default function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.home}>
       <StatusBar/>
-      <Header count={count}/>
+      <Header/>
 
     <Home increment={increment} decrement={decrement} count={count}/>
     <Account/>

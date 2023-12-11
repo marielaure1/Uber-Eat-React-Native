@@ -5,36 +5,44 @@ import styles from '../../../Styles.tsx';
 export default function AccountForm(): JSX.Element {
   const [isFocus, setIsFocus] = useState<string | false>(false);
   const [reload, setReload] = useState(false);
-  const [fields, setFields] = useState({
-    firstName: '',
-    lastName: '',
-  });
-
+  const fieldsFirstName = useRef("");
+  const fieldsLastName = useRef("");
   const fieldsErrorsRef = useRef({
     firstName: false,
     lastName: false,
   });
+  const successRef = useRef(false)
 
   const handleSubmit = () => {
     const regex = /^[a-zA-Z0-9\s]*$/;
 
-    if (fields?.firstName?.length < 1) {
+    if (fieldsFirstName?.current?.length < 1) {
       fieldsErrorsRef.current.firstName = 'Champs vide.';
-    } else if (!regex.test(fields?.firstName)) {
+    } else if (!regex.test(fieldsFirstName?.current)) {
       fieldsErrorsRef.current.firstName = 'Caractères spéciaux détectés.';
     } else {
       fieldsErrorsRef.current.firstName = false;
     }
 
-    if (fields?.lastName?.length < 1) {
+    if (fieldsLastName?.current?.length < 1) {
       fieldsErrorsRef.current.lastName = 'Champs vide.';
-    } else if (!regex.test(fields?.lastName)) {
+    } else if (!regex.test(fieldsLastName?.current)) {
       fieldsErrorsRef.current.lastName = 'Caractères spéciaux détectés.';
     } else {
       fieldsErrorsRef.current.lastName = false;
     }
 
-    setReload((prevReload) => !prevReload); 
+    for (const el of Object.values(fieldsErrorsRef?.current)) {
+      if (!el) {
+        successRef.current = true;
+      } else {
+        successRef.current = false;
+        break; 
+      }
+    }
+    
+    setReload((prevReload) => !prevReload);
+   
   };
 
   useEffect(() => {
@@ -53,17 +61,16 @@ export default function AccountForm(): JSX.Element {
             Il s'agit du nom que vous souhaitez que les autres utilisateurs utilisent pour vous désigner.
           </Text>
 
-          {!fieldsErrorsRef?.current?.lastName && !fieldsErrorsRef?.current?.firstName && <Text style={styles.successText}>Message envoyé avec succès</Text>}
+          {successRef?.current && <Text style={styles.successText}>Message envoyé avec succès</Text>}
   
           <View style={styles.formField}>
             <Text style={styles.formLabel}>Prénom</Text>
             <View style={styles.positionRelative}>
             <TextInput
-              value={fields.firstName}
               style={[styles.formInput, isFocus === 'firstName' ? styles.formInputFocus : styles.formInputOut]}
               onFocus={() => setIsFocus('firstName')}
               onBlur={() => setIsFocus(false)}
-              onChangeText={(text) => setFields((prevState) => ({ ...prevState, firstName: text }))}
+              onChangeText={(val) => {fieldsFirstName.current = val;}}
             />
               <Text style={styles.cross}>x</Text>
             </View>
@@ -75,11 +82,10 @@ export default function AccountForm(): JSX.Element {
             <Text style={styles.formLabel}>Nom de famille</Text>
             <View style={styles.positionRelative}>
             <TextInput
-              value={fields.lastName}
               style={[styles.formInput, isFocus === 'lastName' ? styles.formInputFocus : styles.formInputOut]}
               onFocus={() => setIsFocus('lastName')}
               onBlur={() => setIsFocus(false)}
-              onChangeText={(text) => setFields((prevState) => ({ ...prevState, lastName: text }))}
+              onChangeText={(val) => {fieldsLastName.current = val;}}
             />
               <Text style={styles.cross}>x</Text>
             </View>

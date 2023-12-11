@@ -3,8 +3,8 @@ import { View, Text, TextInput, TouchableWithoutFeedback, Image, StyleSheet } fr
 import ToggleMode from "../item/ToggleMode.tsx"
 import styles from '../../../Styles.tsx';
 
-function Header({count}) {
-  const [address, setAddress] = useState("19 rue Yves Toudic");
+function Header() {
+  const address = "19 rue Yves Toudic";
 
   return (
     <View style={styles.navBar}>
