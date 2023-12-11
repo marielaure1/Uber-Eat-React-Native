@@ -443,6 +443,102 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 600,
     fontSize: 18
+  },
+  timerContainer:{
+    marginTop: 5
+  },
+  timer:{
+    color: "black"
+  },
+  formHeader: {
+    backgroundColor: "black",
+    width: "100%",
+    padding: 20
+  },
+  form : {
+    padding: 25,
+    position: "relative",
+    marginBottom: 300
+  },
+  formHeaderText: {
+    color: "white",
+    fontWeight: 600,
+    fontSize: 18
+  },
+  formTitle: {
+    color: "black",
+    fontSize: 20,
+    fontWeight: 600,
+    marginBottom: 20
+  },
+  formSubTitle:  {
+    color: "black",
+    fontSize: 16,
+    marginBottom: 25
+  },
+  formLabel: {
+    color: "black",
+    fontSize: 16,
+    fontWeight: 600,
+    marginBottom: 10
+  },
+  formInput: {
+    borderWidth: 2,
+    borderRadius: 10,
+    color: "black",
+    paddingLeft: 10
+  },
+  formInputOut: {
+    borderColor: "#EEEEEE",
+    backgroundColor: "#EEEEEE",
+  },
+  formInputFocus: {
+    borderColor: "black",
+    backgroundColor: "#FDFDFD",
+  },
+  cross:{
+    borderRadius: 20,
+    backgroundColor: "black",
+    color: "white",
+    fontSize: 12,
+    width: 20,
+    height: 20,
+    // flexDirection: "row",
+    // justifyContent: "center",
+    // alignItems: "center",
+    textAlign: "center",
+    position: "absolute",
+    top: 15,
+    right: 10
+  },
+  formField: {
+    marginBottom: 20
+  },
+  positionRelative: {
+    position: "relative"
+  },
+  buttonSubmit: {
+    backgroundColor: 'black',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 5,
+    borderRadius: 8,
+    width: '100%'
+  },
+  buttonSubmitText: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: 5,
+  },
+  errorText: {
+    marginTop: 10,
+    color: "red"
+  },
+  successText: {
+    marginBottom: 10,
+    color: "green"
   }
 });
 

@@ -4,7 +4,10 @@ import styles from '../../../Styles.tsx';
 
 interface CardProps {
   data: {
-    promo?: string;
+    promo?: {
+      title: string;
+      endDate: string;
+    };
     img_id: number;  
     name: string;
     note: number;
@@ -35,12 +38,14 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
 
   const enseigneStatut = () => {
     let now = new Date();
-    // now.toLocaleString("fr-FR", { timeZone: "Europe/Paris" });
     let nowDateTime = now.toISOString();
     let nowDate = nowDateTime.split('T')[0];
+    let tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    let tomorrowDate = tomorrow.toISOString().split('T')[0];
 
     let ouverture = new Date(nowDate + 'T' + data.horaires.ouverture);
-    let fermeture = new Date(nowDate + 'T' + data.horaires.fermeture);
+    let fermeture = ouverture > fermeture ? new Date(tomorrowDatenew + 'T' + data.horaires.fermeture) : new Date(nowDate + 'T' + data.horaires.fermeture);
 
     if (ouverture <= now && fermeture >= now) {
       statutHoraire.current = true;
@@ -51,8 +56,6 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
     if(statutHoraire.current != reload){
       setReload(statutHoraire.current);
     }
-
-    console.log(data.name, " : ", statutHoraire.current);
     
   };
 
@@ -66,20 +69,44 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
   }, [data.horaires]);
 
   useEffect(() => {
-    console.log("reload a changé :", reload);
   }, [reload]);
 
   const handleStar = () => {
     setActiveStar((prev) => !prev);
   };
 
+  const calculateTimeRemaining = (endDate) => {
+    const now = new Date();
+    const difference = new Date(endDate).getTime() - now.getTime();
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    
+    return { days, hours, minutes, seconds };
+  }
+
+  const [timeRemaining, setTimeRemaining] = useState(false);
+
+  useEffect(() => {
+    if(data?.promo?.endDate){
+      const intervalId = setInterval(() => {
+        setTimeRemaining(calculateTimeRemaining(data?.promo?.endDate));
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    }
+
+  }, []);
+
   return (
     <View underlayColor="transparent" onPress={() => {}}>
       <View style={type === "slider" ? styles.card : styles.cardEnseigne}>
         <View style={styles.imgContainer}>
-          {activePromo && statutHoraire.current && (
-            <View style={styles.promo}>
-              <Text style={styles.promoTextContent}>{data.promo}</Text>
+          {activePromo && statutHoraire?.current && (
+            <View style={styles.promo.title}>
+              <Text style={styles.promoTextContent}>{data.promo.title}</Text>
             </View>
           )}
 
@@ -92,9 +119,14 @@ const CardEnseigne: React.FC<CardProps> = ({ data, type = "slider" }) => {
           </TouchableHighlight>
 
           <Image source={img[data.img_id]} style={styles.img} />
-          <View style={[styles.fermeture, statutHoraire.current ? styles.displayNone : styles.displayFlex]}>
+          <View style={[styles.fermeture, statutHoraire?.current ? styles.displayNone : styles.displayFlex]}>
             <Text style={styles.fermetureText}>Fermée</Text>
           </View>
+
+          {/* <View style={[styles.timerContainer, !statutHoraire?.current ? styles.displayNone : styles.displayFlex, timeRemaining != false ? styles.displayFlex : styles.displayNone]}>
+              <Text style={[styles.timer]}>
+                {`${timeRemaining?.days} jour${timeRemaining?.days > 1 ? "s" : ""} ${timeRemaining?.hours} heure${timeRemaining?.hours > 1 ? "s" : ""} ${timeRemaining?.minutes} minute${timeRemaining?.minutes > 1 ? "s" : ""} ${timeRemaining?.seconds} seconde${timeRemaining?.seconds > 1 ? "s" : ""}`}</Text>
+            </View> */}
         </View>
         <View style={styles.enseignesInfo}>
           <View>
