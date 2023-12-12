@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import styles from '../../../Styles.tsx';
+import {StoreContextCart} from '../../hook/useCounter.tsx';
 
-const CartItem: React.FC = ({ count }) => {
+const CartItem: React.FC = () => {
   const [statut, setStatut] = useState(false);
+
+  const { count } = useContext(StoreContextCart);
 
   useEffect(() => {
     setStatut(true);

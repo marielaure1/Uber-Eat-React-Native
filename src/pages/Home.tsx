@@ -10,17 +10,18 @@ import SliderAnnonce from '../components/home/SliderAnnonce.tsx';
 import CardEnseigne from '../components/card/CardEnseigne.tsx';
 import CartItem from '../components/item/CartItem.tsx';
 import EnseigneData from '../../data/EnseigneData.json';
-import useCounter from '../hook/useCounter.tsx';
+import StoreCartProvider from '../hook/useCounter.tsx';
 import { useState, useEffect } from "react";
 
 import AccountForm from '../components/form/AccountForm.tsx';
 
-export default function Home({count, increment, decrement}): JSX.Element {
+export default function Home(): JSX.Element {
 
   return (
     <>
     <SafeAreaView style={styles.home}>
       <StatusBar/>
+      <StoreCartProvider>
       <ScrollView contentInsetAdjustmentBehavior="automatic"  style={styles.scrollView}>
         <View style={styles.home}>
 
@@ -32,7 +33,7 @@ export default function Home({count, increment, decrement}): JSX.Element {
          <CardEnseigne type="enseigne" data={EnseigneData[7]} />
           <CardEnseigne type="enseigne" data={EnseigneData[3]} />
 
-           <SliderProduct title="Faites vos courses chez Carrefour" increment={increment} decrement={decrement} enseigne={1}/>
+           <SliderProduct title="Faites vos courses chez Carrefour" enseigne={1}/>
            <SliderAnnonce/>
 
           <SliderEnseigne title="Récemment consultés"/>
@@ -40,7 +41,7 @@ export default function Home({count, increment, decrement}): JSX.Element {
           <CardEnseigne type="enseigne" data={EnseigneData[6]} />
           <CardEnseigne type="enseigne" data={EnseigneData[4]} />
 
-          <SliderProduct title="Snack" increment={increment} decrement={decrement} enseigne={2}/>
+          <SliderProduct title="Snack" enseigne={2}/>
 
           <SliderEnseigne title="Swile accepté" reverse/>
 
@@ -48,9 +49,10 @@ export default function Home({count, increment, decrement}): JSX.Element {
         </View>
       </ScrollView>
 
-      <CartItem count={count} />
+      <CartItem />
+      </StoreCartProvider>
     </SafeAreaView>
-    <CartItem count={count} />
+    {/* <CartItem count={count} /> */}
 
 
     </>

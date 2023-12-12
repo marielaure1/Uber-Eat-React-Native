@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 import styles from '../../../Styles.tsx'
+import {StoreContextCart} from '../../hook/useCounter.tsx';
 
 
-const CountItem: React.FC = ({ data, increment, decrement }) => {
+const CountItem: React.FC = ({ data }) => {
 
-    const [ count, setCount ] = useState(0);
+    const [ countProduct, setCountProduct ] = useState(0);
+    const { increment, decrement } = useContext(StoreContextCart);
     const [ statut, setStatut ] = useState(false);
 
     const handleChange = (type) => {
       if(type == 'increment'){
-        setCount(count + 1);
+        setCountProduct(countProduct + 1);
         increment(); 
-      } else if(type == 'decrement' && count > 0){
-        setCount(count - 1);
+      } else if(type == 'decrement' && countProduct > 0){
+        setCountProduct(countProduct - 1);
         decrement(); 
       }
     }
@@ -31,7 +33,7 @@ const CountItem: React.FC = ({ data, increment, decrement }) => {
   return (
     <View style={styles.buttonsQuantity}>
 
-        {!statut && count == 0 && 
+        {!statut && countProduct == 0 && 
             <>
                 <TouchableHighlight style={styles.buttonQuantity} onPress={handleStatut}>
                     <Text style={styles.buttonQuantityText}> + </Text>
@@ -39,10 +41,10 @@ const CountItem: React.FC = ({ data, increment, decrement }) => {
             </>
         }
 
-        {!statut && count > 0 && 
+        {!statut && countProduct > 0 && 
             <>
                 <TouchableHighlight style={styles.buttonQuantity} onPress={handleStatut}>
-                    <Text style={styles.buttonQuantityText}> {count} </Text>
+                    <Text style={styles.buttonQuantityText}> {countProduct} </Text>
                 </TouchableHighlight>
             </>
         }
@@ -53,7 +55,7 @@ const CountItem: React.FC = ({ data, increment, decrement }) => {
                     <Text style={styles.buttonQuantityText}> - </Text>
                 </TouchableHighlight>
                 <View style={styles.buttonQuantity}>
-                    <Text style={styles.buttonQuantityText}> {count} </Text>
+                    <Text style={styles.buttonQuantityText}> {countProduct} </Text>
                 </View>
                 <TouchableHighlight style={styles.buttonQuantity} onPress={() => { handleChange("increment");}}>
                     <Text style={styles.buttonQuantityText}> + </Text>

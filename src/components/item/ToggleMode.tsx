@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
 import styles from '../../../Styles.tsx';
 
-const ToggleMode: React.FC = ({ count }) => {
+const ToggleMode: React.FC = () => {
   const [statut, setStatut] = useState("delivry");
 
   const handleChange = () => {
