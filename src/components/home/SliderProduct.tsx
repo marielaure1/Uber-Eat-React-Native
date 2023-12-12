@@ -6,7 +6,6 @@ import ProductData from '../../../data/ProductData.json';
 import { useState, useEffect } from "react";
 
 export default function SliderProduct({title, enseigne}): JSX.Element {
-  const [listProduct, getListProduct] = useState(ProductData);
   
   return (
     <View style={styles.section}>

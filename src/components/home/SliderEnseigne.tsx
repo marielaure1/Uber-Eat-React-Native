@@ -19,8 +19,6 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
 
   // randomEnseigne(EnseigneData);
 
-  const [listEnseigne, getListEnseigne] = useState(EnseigneData);
-
   return (
       <View style={styles.section}>
           <View style={[styles.row, styles.list, styles.titleContainer]}>
@@ -35,7 +33,7 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
           
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.list}>
           {reverse && 
-            listEnseigne.slice(0).reverse().map((item, index) => {
+            EnseigneData.slice(0).reverse().map((item, index) => {
               return (
                 <CardEnseigne type="slider" key={index} data={item} />
               )
@@ -43,7 +41,7 @@ export default function SliderEnseigne({title, reverse}): JSX.Element {
           }
 
           {!reverse && 
-            listEnseigne.map((item, index) => {
+            EnseigneData.map((item, index) => {
               return (
                 <CardEnseigne type="slider" key={index} data={item} />
               )

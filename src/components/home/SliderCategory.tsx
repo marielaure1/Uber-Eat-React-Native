@@ -6,12 +6,11 @@ import CategoryData from '../../../data/CategoryData.json';
 import { useState, useEffect } from "react";
 
 export default function SliderCategory(): JSX.Element {
-  const [listCategory, getListCategory] = useState(CategoryData);
   
   return (
         <View style={styles.section}> 
             <ScrollView horizontal={true}  showsHorizontalScrollIndicator={false} style={styles.list}>
-                {listCategory.map((item, index) => (
+                {CategoryData.map((item, index) => (
                 <CardCategory key={index} data={item} />
                 ))}
             </ScrollView>
